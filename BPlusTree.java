@@ -165,7 +165,7 @@ public class BPlusTree {
      * 
      */
 
-    private boolean isEmpty() {
+    public boolean isEmpty() {
 
         return firstLeaf == null;
 
@@ -479,7 +479,7 @@ public class BPlusTree {
      * 
      */
 
-    public void insert(int key, double value) {
+    public void insert(int key, long value) {
 
         if (isEmpty()) {
 
@@ -625,7 +625,7 @@ public class BPlusTree {
      * 
      */
 
-    public Double search(int key) {
+    public Long search(int key) {
 
         // If B+ tree is completely empty, simply return null
 
@@ -1046,7 +1046,7 @@ public class BPlusTree {
 
         int key;
 
-        double value;
+        long value;
 
         /**
          * 
@@ -1058,7 +1058,7 @@ public class BPlusTree {
          * 
          */
 
-        public DictionaryPair(int key, double value) {
+        public DictionaryPair(int key, long value) {
 
             this.key = key;
 
@@ -1095,28 +1095,6 @@ public class BPlusTree {
             }
 
         }
-
-    }
-
-    public static void main(String[] args) {
-
-        // Create a new B+ tree with order of 3
-
-        BPlusTree bpt = new BPlusTree(3);
-        bpt.insert(1, 1.0);
-        bpt.insert(4, 4.0);
-        bpt.insert(7, 7.0);
-        bpt.insert(10, 10.0);
-        bpt.insert(17, 17.0);
-        bpt.insert(21, 21.0);
-        bpt.insert(31, 31.0);
-        bpt.insert(25, 25.0);
-        bpt.insert(19, 19.0);
-        bpt.insert(20, 20.0);
-        bpt.insert(28, 28.0);
-        bpt.insert(42, 42.0);
-        System.out.println(bpt.search(42));
-        System.out.println(bpt.search(-1));
 
     }
 
